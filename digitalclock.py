@@ -32,15 +32,26 @@ mc = Minecraft.create(port=param.PORT_MC)
 # display1 for year, month, and date in YYYY-MM-DD
 num_of_letters = len(datetime.datetime.now().strftime("%Y-%m-%d"))
 # top-left of the clock frame
-ap1 = (0, param.AXIS_Y_V_ORG + 24, 5)
+ap1 = (0, param.AXIS_Y_V_ORG + 36, 5)
 display1 = BufferDisplay(mc, anchor_position=ap1,
                 block_frame=param.GOLD_BLOCK, num_of_letters=num_of_letters)
 
 # display2 for hour, minute, second in HH:MM:SS
 num_of_letters = len(time.strftime("%H:%M:%S"))
-ap2 = (6, param.AXIS_Y_V_ORG + 12, 5)
+ap2 = (6, param.AXIS_Y_V_ORG + 24, 5)
 display2 = BufferDisplay(mc, anchor_position=ap2,
                 block_frame=param.IRON_BLOCK, num_of_letters=num_of_letters)
+print(time)
+'''
+/# display3 for , minute, second in HH:MM:SS
+num_of_letters = len(time.strftime("%s.%f"))
+ap3 = (12, param.AXIS_Y_V_ORG + 24, 5)
+display3 = BufferDisplay(mc, anchor_position=ap3,
+                block_frame=param.GOLD_BLOCK, num_of_letters=num_of_letters)*/
+'''
+
+
+
 
 msg = datetime.datetime.now().strftime("%Y-%m-%d")
 display1.update(msg, block_letters=param.IRON_BLOCK)
@@ -50,3 +61,6 @@ while True:
     display2.update(msg, block_letters=param.SEA_LANTERN_BLOCK)
     # display2.update(msg, block_letters=param.GLOWSTONE)
     time.sleep(0.1)  # Rest for a while before drawing again.
+
+msg = datetime.datetime.now().strftime("%s.%f")
+display3.update(msg, block_letters=param.IRON_BLOCK)

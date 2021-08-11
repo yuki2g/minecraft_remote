@@ -15,7 +15,7 @@ You can use numbers, "-", ":", and " ". Or, make your own letters.
 # for Minecraft Java Edition 1.16.5
 from mcje.minecraft import Minecraft
 import param_MCJE as param
-AP1 = (-19, 100, -5)  # top-left of the display frame
+AP1 = (-19, 200, -5)  # top-left of the display frame
 
 # for Mineraft Java Edition 1.12.2
 # from mcje.minecraft import Minecraft
@@ -49,5 +49,5 @@ msg = '6543210'
 display1.update(msg, block_letters=param.GOLD_BLOCK)
 mc.postToChat(msg)
 
-time.sleep(4)
+time.sleep(40)
 display1.delete()
